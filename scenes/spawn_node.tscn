@@ -1,0 +1,34 @@
+[gd_scene format=3 uid="uid://bls3f0hl6i38n"]
+
+[ext_resource type="Script" uid="uid://crd3i63cf2sld" path="res://scripts/spawn_node.gd" id="1_4kxld"]
+[ext_resource type="Texture2D" uid="uid://b47gl1d1yxgt2" path="res://assets/world/world_tileset.png" id="1_cvjqe"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4kxld"]
+load_path = "res://.godot/imported/world_tileset.png-626fd5ffdf947da6d995ae0502455328.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0qxqa"]
+atlas = SubResource("CompressedTexture2D_4kxld")
+region = Rect2(128, 48, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qjeyg"]
+atlas = ExtResource("1_cvjqe")
+region = Rect2(128, 64, 16, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0qxqa"]
+
+[node name="SpawnNode" type="Node2D" unique_id=1144914255]
+script = ExtResource("1_4kxld")
+
+[node name="CatCharacterRespawn" type="Marker2D" parent="." unique_id=1277197561]
+
+[node name="ActiveSprite" type="Sprite2D" parent="." unique_id=1360077491]
+texture = SubResource("AtlasTexture_0qxqa")
+
+[node name="InactiveSprite" type="Sprite2D" parent="." unique_id=705568445]
+texture = SubResource("AtlasTexture_qjeyg")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1502632096]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1435681616]
+shape = SubResource("RectangleShape2D_0qxqa")

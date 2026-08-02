@@ -346,12 +346,15 @@ position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_0qxqa")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.16776596
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1642405374]
 position = Vector2(0, -12)
 shape = SubResource("CircleShape2D_0qxqa")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=365654362]
-position = Vector2(1, 17)
 position_smoothing_enabled = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_vertical_offset = -1.0
+drag_bottom_margin = 0.5
+editor_draw_drag_margin = true

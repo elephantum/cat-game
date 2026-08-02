@@ -3,15 +3,10 @@ extends CharacterBody2D
 class_name CatCharacter
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var cat_character_respawn: Marker2D = $"../CatCharacterRespawn"
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
-
-func respawn() -> void:
-	position = cat_character_respawn.position
-	velocity = Vector2(0, 0)
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -25,8 +20,15 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction := Input.get_axis("left", "right")
+	if Input.is_key_label_pressed(KEY_SHIFT):
+		direction *= 0.25
+
 	if direction:
-		animated_sprite_2d.animation = 'walk'
+		if abs(direction) < 0.7:
+			animated_sprite_2d.animation = 'walk'
+		else:
+			animated_sprite_2d.animation = 'run'
+
 		velocity.x = direction * SPEED
 		if direction > 0:
 			animated_sprite_2d.flip_h = true

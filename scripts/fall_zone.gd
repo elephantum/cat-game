@@ -1,5 +1,6 @@
 extends Area2D
 
+@onready var scene: CatLevel = $".."
 
 # Connect the body_entered signal from the Inspector, or via code:
 func _ready() -> void:
@@ -8,4 +9,4 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D) -> void:
 	# Check if the object that fell in is the player
 	if body is CatCharacter:
-		body.respawn()
+		scene.player_respawn()

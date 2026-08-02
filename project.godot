@@ -13,13 +13,12 @@ config_version=5
 config/name="Cat Game"
 run/main_scene="uid://e3b1fii41hwc"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://icon.png"
 
 [display]
 
 window/size/viewport_width=640
 window/size/viewport_height=360
-window/size/mode=2
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
