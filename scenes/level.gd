@@ -2,7 +2,7 @@ extends Node2D
 
 class_name CatLevel
 
-@onready var tile_map_layer: TileMapLayer = $TileMapLayer
+@onready var tilemap_layer: TileMapLayer = $TileMapLayer
 
 const CAT_CHARACTER_SCENE = preload("res://scenes/cat_character.tscn")
 const SPAWN_NODE_SCENE = preload("res://scenes/spawn_node.tscn")
@@ -17,6 +17,7 @@ func player_respawn() -> void:
 	
 	if player == null:
 		player = CAT_CHARACTER_SCENE.instantiate()
+		player.tilemap_layer = tilemap_layer
 		add_child(player)
 	
 	player.global_position = spawn.spawn_point.global_position
@@ -31,14 +32,14 @@ func activate_spawn(new_spawn: SpawnNode) -> void:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	for cell_coords in tile_map_layer.get_used_cells():
-		var tile_data = tile_map_layer.get_cell_tile_data(cell_coords)
+	for cell_coords in tilemap_layer.get_used_cells():
+		var tile_data = tilemap_layer.get_cell_tile_data(cell_coords)
 		
 		if tile_data and tile_data.get_custom_data("is_spawn_point"):
 			var new_spawn_instance = SPAWN_NODE_SCENE.instantiate()
-			new_spawn_instance.global_position = tile_map_layer.map_to_local(cell_coords)
+			new_spawn_instance.global_position = tilemap_layer.map_to_local(cell_coords)
 			add_child(new_spawn_instance)
-			tile_map_layer.erase_cell(cell_coords)
+			tilemap_layer.erase_cell(cell_coords)
 			
 			if tile_data.get_custom_data("is_starting_spawn_point"):
 				spawn = new_spawn_instance
