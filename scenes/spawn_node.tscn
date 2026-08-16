@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bls3f0hl6i38n"]
 
 [ext_resource type="Script" uid="uid://crd3i63cf2sld" path="res://scripts/spawn_node.gd" id="1_4kxld"]
-[ext_resource type="Texture2D" uid="uid://b47gl1d1yxgt2" path="res://assets/world/world_tileset.png" id="1_cvjqe"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4kxld"]
 load_path = "res://.godot/imported/world_tileset.png-626fd5ffdf947da6d995ae0502455328.ctex"
@@ -10,8 +9,11 @@ load_path = "res://.godot/imported/world_tileset.png-626fd5ffdf947da6d995ae05024
 atlas = SubResource("CompressedTexture2D_4kxld")
 region = Rect2(128, 48, 16, 16)
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_cvjqe"]
+load_path = "res://.godot/imported/world_tileset.png-626fd5ffdf947da6d995ae0502455328.ctex"
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_qjeyg"]
-atlas = ExtResource("1_cvjqe")
+atlas = SubResource("CompressedTexture2D_cvjqe")
 region = Rect2(128, 64, 16, 16)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0qxqa"]
