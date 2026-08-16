@@ -333,7 +333,7 @@ animations = [{
 }],
 "loop": 0,
 "name": &"climb",
-"speed": 12.0
+"speed": 24.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -529,7 +529,7 @@ editor_draw_drag_margin = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1575552748]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_0qxqa")
-animation = &"run"
+animation = &"climb"
 autoplay = "idle"
 
 [node name="DownRay" type="RayCast2D" parent="Visuals" unique_id=1883594353]
@@ -544,6 +544,7 @@ position = Vector2(0, -20)
 target_position = Vector2(-28, 0)
 
 [node name="StateLabel" type="Label" parent="." unique_id=810528587]
+visible = false
 offset_left = -20.0
 offset_top = -41.0
 offset_right = 20.0

@@ -34,7 +34,7 @@ jobs:
 
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ steps.export.outputs.build_directory }}
+          path: ${{ steps.export.outputs.build_directory }}/Web
 
   deploy:
     needs: build
@@ -44,4 +44,4 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
