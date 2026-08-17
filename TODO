@@ -1,7 +1,12 @@
-# TODO
+TODO:
 
-☐ better controller: coyote time + input buffering
-☐ wall climb
+  [ ] lava
+  [ ] proper state machine for animation
+  [ ] multiple levels
+  [ ] better controller
+    [ ] coyote time
+    [ ] input buffering
 
 Archive:
-  ✔ checkpointing @done(26-08-02 22:26)
+  [x] wall climb @done(26-08-17 10:27)
+  [x] checkpointing @done(26-08-17 10:26)
