@@ -1,12 +1,11 @@
-TODO:
-
-  [ ] lava
-  [ ] proper state machine for animation
-  [ ] multiple levels
-  [ ] better controller
-    [ ] coyote time
-    [ ] input buffering
+[ ] lava
+[ ] proper state machine for animation
+[ ] multiple levels
+[ ] better controller
+  [ ] coyote time
+  [ ] input buffering
 
 Archive:
+  [x] better wall slide - slide starts only when moving down @done(26-08-17 21:29)
   [x] wall climb @done(26-08-17 10:27)
   [x] checkpointing @done(26-08-17 10:26)

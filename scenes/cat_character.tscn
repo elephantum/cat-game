@@ -529,14 +529,14 @@ editor_draw_drag_margin = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Visuals" unique_id=1575552748]
 position = Vector2(0, -16)
 sprite_frames = SubResource("SpriteFrames_0qxqa")
-animation = &"climb"
+animation = &"idle"
 autoplay = "idle"
 
 [node name="DownRay" type="RayCast2D" parent="Visuals" unique_id=1883594353]
 target_position = Vector2(0, 32)
 
 [node name="ForwardRay" type="RayCast2D" parent="Visuals" unique_id=1434951918]
-position = Vector2(0, -12)
+position = Vector2(0, -11)
 target_position = Vector2(-13, 0)
 
 [node name="ForwardTopRay" type="RayCast2D" parent="Visuals" unique_id=1259699648]

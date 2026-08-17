@@ -52,7 +52,7 @@ func check_is_hitting_a_wall() -> void:
 				state = State.NORMAL
 				return
 
-			if tile_data and tile_data.get_custom_data("is_climbeable"):
+			if tile_data and tile_data.get_custom_data("is_climbeable") and velocity.y >= 0:
 				state = State.WALL_SLIDE
 				return
 	
@@ -133,7 +133,7 @@ func _physics_process(delta: float) -> void:
 			handle_climbing_movement(delta)
 		
 		State.WALL_SLIDE:
-			handle_sliding_movement(delta)		
+			handle_sliding_movement(delta)
 		
 		State.NORMAL:
 			handle_default_movement(delta)
